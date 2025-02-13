@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // ✅ Ajout du FormsModule
+import { FormsModule } from '@angular/forms';
+import { HeaderComponent } from "../header/header.component"; // ✅ Ajout du FormsModule
 
 interface Event {
   date: string;
@@ -9,12 +10,12 @@ interface Event {
   category: string;
   details: string;
   showDetails: boolean;
-  imageUrl: string;
+  imageUrl?: string;
 }
 
 @Component({
   selector: 'app-events',
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, HeaderComponent],
   templateUrl: './events.component.html',
   styleUrl: './events.component.css',
 })
@@ -71,7 +72,6 @@ export class EventsComponent {
       details:
         "Célébrez l'engagement et l'innovation lors de la remise des prix Ingénieuses'24...",
       showDetails: false,
-      imageUrl: 'assets/', // Example image URL
     },
     {
       date: '07/11/24',
@@ -101,7 +101,7 @@ export class EventsComponent {
       details:
         "Terminez l'année en beauté avec un afterwork spécial réservé aux membres d'Ingénieure Au Féminin. Un moment privilégié pour échanger, réseauter et célébrer nos réussites collectives.",
       showDetails: false,
-      imageUrl: 'assets/afterwork-fin-annee.png', // Example image URL
+      imageUrl: 'assets/afterwork-fin-dannee.png', // Example image URL
     },
     {
       date: '21/01/25',
@@ -111,7 +111,7 @@ export class EventsComponent {
       details:
         "Les lycéens du Lycée Monge sont invités à visiter l'Institut National de l'Énergie Solaire (INES) pour découvrir les métiers de la recherche. Une journée riche en découvertes et en inspirations pour les futurs scientifiques.",
       showDetails: false,
-      imageUrl: 'assets/visite-INES.png', // Example image URL
+      imageUrl: 'assets/visite.png', // Example image URL
     },
     {
       date: '13/02/25',
@@ -122,7 +122,6 @@ export class EventsComponent {
       details:
         'Formez des équipes et relevez des défis technologiques passionnants, tout en développant vos compétences en ingénierie.',
       showDetails: false,
-      imageUrl: 'assets/hackathon.png', // Example image URL
     },
     {
       date: '18/02/25',
@@ -144,7 +143,7 @@ export class EventsComponent {
       details:
         "Découvrez notre exposition \"Veuillez Rendre à Cléopâtre\", qui met à l'honneur les femmes scientifiques victimes de l'effet Matilda. Une plongée dans l'histoire pour redécouvrir des figures féminines oubliées et leurs contributions majeures.",
       showDetails: false,
-      imageUrl: 'assets/exposition-cleopatre.png', // Example image URL
+      imageUrl: 'assets/cleopatre.png', // Example image URL
     },
   ];
 

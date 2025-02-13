@@ -1,3 +1,4 @@
+<app-header />
 <div class="container">
   <h2 class="title">Événements</h2>
 
@@ -17,11 +18,15 @@
     </select>
   </div>
 
-  <div *ngFor="let year of eventYears" class="year-section" [hidden]="!shouldShowYear(year)">
+  <div
+    *ngFor="let year of eventYears"
+    class="year-section"
+    [hidden]="!shouldShowYear(year)"
+  >
     <h3 class="year-title">{{ year }}</h3>
 
     <div *ngFor="let event of getFilteredEvents(year)" class="event-card">
-      <div class="event-image">
+      <div class="event-image" *ngIf="event.imageUrl">
         <img [src]="event.imageUrl" alt="{{ event.title }}" />
       </div>
       <div class="event-details">
@@ -31,8 +36,11 @@
         <p class="category"><strong>Catégorie:</strong> {{ event.category }}</p>
 
         <!-- Collapsible details section -->
-        <button class="toggle-details" (click)="event.showDetails = !event.showDetails">
-          {{ event.showDetails ? 'Cacher les détails' : 'Voir les détails' }}
+        <button
+          class="toggle-details"
+          (click)="event.showDetails = !event.showDetails"
+        >
+          {{ event.showDetails ? "Cacher les détails" : "Voir les détails" }}
         </button>
 
         <div *ngIf="event.showDetails" class="details">
