@@ -1,49 +1,51 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-import { PartnersPresentationComponent } from './partners-presentation.component';  
+import { PartnersPresentationComponent } from './partners-presentation.component';
 import { By } from '@angular/platform-browser';
 
-
 describe('PartnersPresentationComponent', () => {
-    let component: PartnersPresentationComponent;
-    let fixture: ComponentFixture<PartnersPresentationComponent>;
-  
-    beforeEach(async () => {
-      await TestBed.configureTestingModule({
-        declarations: [ PartnersPresentationComponent ]
-      })
-      .compileComponents();
-    });
-  
-    beforeEach(() => {
-      fixture = TestBed.createComponent(PartnersPresentationComponent);
-      component = fixture.componentInstance;
-      fixture.detectChanges();
-    });
-  
-    it('doit créer le composant', () => {
-      expect(component).toBeTruthy();
-    });
-  
-    it('doit afficher le bon titre', () => {
-      const compiled = fixture.nativeElement as HTMLElement;
-      const h1 = compiled.querySelector('h1');
-      expect(h1?.textContent).toContain('Nos Partenaires');
-    });
-  
-    it('doit afficher la liste des partenaires', () => {
-      component.partenaires = [
-        { nom: 'Partenaire 1', logo: 'assets/logo1.png', description: 'Description du partenaire 1' },
-        { nom: 'Partenaire 2', logo: 'assets/logo2.png', description: 'Description du partenaire 2' },
-        { nom: 'Partenaire 3', logo: 'assets/logo3.png', description: 'Description du partenaire 3' }
-      ];
-      fixture.detectChanges();
-  
-      const compiled = fixture.nativeElement as HTMLElement;
-      const partnerList = compiled.querySelectorAll('div.partenaire');
-  
-      expect(partnerList.length).toBe(3);
-      expect(partnerList[0].querySelector('h3')?.textContent).toContain('Partenaire 1');
-      expect(partnerList[1].querySelector('h3')?.textContent).toContain('Partenaire 2');
-      expect(partnerList[2].querySelector('h3')?.textContent).toContain('Partenaire 3');
-    });
+  let component: PartnersPresentationComponent;
+  let fixture: ComponentFixture<PartnersPresentationComponent>;
+
+  beforeEach(async () => {
+    await TestBed.configureTestingModule({
+      declarations: [ PartnersPresentationComponent ],
+    })
+    .compileComponents();
   });
+
+  beforeEach(() => {
+    fixture = TestBed.createComponent(PartnersPresentationComponent);
+    component = fixture.componentInstance;
+    fixture.detectChanges();
+  });
+
+  it('should create the component', () => {
+    expect(component).toBeTruthy();
+  });
+
+  it('should have a link to the partner website', () => {
+    const partner = component.partenaires[0];
+    const websiteLink = fixture.debugElement.query(By.css('.website-link'));
+    
+    expect(websiteLink.nativeElement.getAttribute('href')).toBe(partner.website);
+    expect(websiteLink.nativeElement.textContent).toBe('Visiter le site');
+  });
+
+  it('should display all partner names correctly', () => {
+    const partnerNames = fixture.debugElement.queryAll(By.css('h3'));
+    const partnerNamesText = partnerNames.map(de => de.nativeElement.textContent.trim());
+    
+    const expectedNames = component.partenaires.map(p => p.nom);
+    
+    expect(partnerNamesText).toEqual(expectedNames);
+  });
+
+  it('should display the partner description correctly', () => {
+    const partnerDescription = fixture.debugElement.queryAll(By.css('p'));
+    const descriptionsText = partnerDescription.map(de => de.nativeElement.textContent.trim());
+    
+    const expectedDescriptions = component.partenaires.map(p => p.description);
+    
+    expect(descriptionsText).toEqual(expectedDescriptions);
+  });
+});
