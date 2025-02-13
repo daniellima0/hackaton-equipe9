@@ -39,12 +39,12 @@
 }
 .infos_orga {
     text-align: center;
-    margin-top: 15px;
+    margin-top: 40px;
     padding-top: 15px;
     width: 100%;
     border-radius: 8px;
     background-color: rgba(208,132,254,0.1);
-    padding-bottom: 20px;
+    padding-bottom: 50px;
 }
 .activities li,
 .goals li {
@@ -63,7 +63,8 @@
     display: flex;
     align-items: center;
     justify-content: space-evenly;
-
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 .activities {
   max-width: 50%;
@@ -126,7 +127,8 @@ strong {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-bottom: 20px;
+  padding-bottom: 50px;
+  padding-top:20px;
 }
 
 .contact-banner h2 {
