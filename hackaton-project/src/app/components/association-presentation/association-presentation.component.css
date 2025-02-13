@@ -32,7 +32,7 @@
 /* Sections */
 .infos_texte {
     text-align: center;
-    padding:20px;
+    margin-top: 15px;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -41,10 +41,11 @@
 }
 .infos_orga {
     text-align: center;
-    padding: 20px;
+
     width: 100%;
     border-radius: 8px;
     background-color: rgba(208,132,254,0.1);
+    padding-bottom: 20px;
 }
 .activities li, .goals li{
     text-align: left;
@@ -66,6 +67,7 @@
 }
 .block-image{
     height:350px;
+    border-radius: 10px;
 }
 
 
@@ -120,7 +122,7 @@ strong {
     color: #ffffff; /* White text */
     text-align: center; /* Center text horizontally */
     
-    border-radius: 0 0 12px 12px; /* Rounded bottom corners */
+    
     width: 100%;
     height: 200px;
     display: flex;

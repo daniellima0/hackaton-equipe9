@@ -18,6 +18,25 @@
     position: absolute; /* Positionne le logo indépendamment */
     left: 30px; /* Espacement à gauche */
 }
+/* Logo */
+/* Conteneur des réseaux sociaux */
+.reseaux {
+    position: absolute; /* Fixe la position indépendamment du reste */
+    right: 50px; /* Place le conteneur à droite */
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Ajoute un espacement entre les icônes */
+}
+
+/* Style des liens */
+.reseau-link img {
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.reseau-link img:hover {
+    transform: scale(1.2); /* Effet zoom au survol */
+}
 
 .logo img {
     height: 50px;
