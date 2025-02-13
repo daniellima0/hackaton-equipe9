@@ -1,18 +1,9 @@
 /* Import Google Font */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
-/* Global Styles */
-body {
-    font-family: 'Poppins', sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #fee6f4;
-    color: #520185;
-    line-height: 1.6;
-}
 
 .presentation-container {
-    max-width: 1000px;
+   
     margin: 40px auto;
     padding: 20px;
     background: white;
@@ -22,7 +13,9 @@ body {
 
 /* Header */
 .header {
-    background-color: #520185;
+    background-image: url('/assets/femme_inge.jpg'); /* Remplacez par le chemin de votre image */
+    background-size: cover; /* Adapter l'image à la taille du header */
+    background-position: center; /* Centrer l'image */
     color: white;
     text-align: center;
     padding: 20px;
