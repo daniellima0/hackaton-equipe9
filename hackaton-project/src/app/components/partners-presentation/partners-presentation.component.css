@@ -1,0 +1,135 @@
+.container-partenaires {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px;
+    width: 100%;
+    align-items: center;
+    background-color: #fee6f4; 
+    min-height: 100vh;
+}
+
+.partenaires-title {
+    font-size: 3em;
+    text-align: center;
+    font-weight: bold;
+    margin-top: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #520185; 
+    text-shadow: 2px 2px 5px rgba(82, 1, 133, 0.3);
+}
+
+.partenaires-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    max-width: 1200px;
+}
+
+.partenaire {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 15px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 280px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.partenaire:hover {
+    transform: scale(1.05);
+    box-shadow: 6px 6px 15px rgba(0, 0, 0, 0.2);
+}
+
+.partner-logo {
+    width: 100%;
+    height: 170px;
+    background-size: contain; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 4px solid #ccc; 
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
+}
+
+.partner-logo img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;  
+}
+
+.partenaire h3 {
+    margin-top: 10px;
+    font-size: 1.5rem;
+    color: #520185; 
+}
+
+.partenaire p {
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+    padding: 0 10px;
+}
+
+
+/* < 768px */
+@media (max-width: 768px) {
+    .partenaires-title {
+        font-size: 2.5em;  
+    }
+
+    .partenaire {
+        max-width: 250px;  
+        padding: 12px;  
+    }
+
+    .partner-logo {
+        width: 230px;  
+        height: 150px;  
+    }
+
+    h3 {
+        font-size: 1.2rem;  
+    }
+
+    p {
+        font-size: 0.9rem;  
+    }
+}
+
+/* phones */
+@media (max-width: 480px) {
+    .partenaires-list {
+        flex-direction: column;  
+        gap: 15px;  
+    }
+
+    .partenaire {
+        max-width: 100%;  
+        margin-top: 10px;  
+    }
+
+    .partner-logo {
+        width: 100%;  
+        height: 130px;  
+    }
+
+    h3 {
+        font-size: 1rem;  
+    }
+
+    p {
+        font-size: 0.85rem;  
+    }
+}
