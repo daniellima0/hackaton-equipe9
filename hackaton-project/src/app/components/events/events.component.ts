@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from "../header/header.component"; // ✅ Ajout du FormsModule
+import { HeaderComponent } from '../header/header.component'; // ✅ Ajout du FormsModule
 
 interface Event {
   date: string;
@@ -22,6 +22,9 @@ interface Event {
 export class EventsComponent {
   selectedCategory: string = '';
   selectedYear: string = '';
+  searchQuery: string = '';
+  currentPage: number = 1;
+  eventsPerPage: number = 5;
 
   events: Event[] = [
     {
@@ -150,11 +153,11 @@ export class EventsComponent {
   get eventYears(): string[] {
     return [
       ...new Set(this.events.map((event) => '20' + event.date.split('/')[2])),
-    ].sort();
+    ];
   }
 
   get eventCategories(): string[] {
-    return [...new Set(this.events.map((event) => event.category))].sort();
+    return [...new Set(this.events.map((event) => event.category))];
   }
 
   shouldShowYear(year: string): boolean {
@@ -162,11 +165,43 @@ export class EventsComponent {
   }
 
   getFilteredEvents(year: string): Event[] {
-    return this.events.filter(
-      (event) =>
-        '20' + event.date.split('/')[2] === year &&
-        (this.selectedCategory === '' ||
-          event.category === this.selectedCategory)
-    );
+    return this.events
+      .filter((event) => '20' + event.date.split('/')[2] === year)
+      .filter(
+        (event) =>
+          this.selectedCategory === '' ||
+          event.category === this.selectedCategory
+      )
+      .filter(
+        (event) =>
+          event.title.toLowerCase().includes(this.searchQuery.toLowerCase()) ||
+          event.description
+            .toLowerCase()
+            .includes(this.searchQuery.toLowerCase())
+      )
+      .slice(
+        (this.currentPage - 1) * this.eventsPerPage,
+        this.currentPage * this.eventsPerPage
+      );
+  }
+
+  parseDate(dateStr: string): number {
+    const [day, month, year] = dateStr.split('/').map(Number);
+    return new Date(2000 + year, month - 1, day).getTime();
+  }
+
+  changePage(direction: number) {
+    this.currentPage += direction;
+  }
+
+  // Method to get the total number of pages for a given year
+  getTotalPages(year: string): number {
+    const totalFilteredEvents = this.getFilteredEvents(year).length;
+    return Math.ceil(totalFilteredEvents / this.eventsPerPage);
+  }
+
+  // Method to navigate to a specific page
+  goToPage(page: number): void {
+    this.currentPage = page;
   }
 }
