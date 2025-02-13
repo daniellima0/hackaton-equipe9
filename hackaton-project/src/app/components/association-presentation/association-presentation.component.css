@@ -41,7 +41,8 @@
 }
 .infos_orga {
     text-align: center;
-
+    margin-top: 15px;
+    padding-top: 15px;
     width: 100%;
     border-radius: 8px;
     background-color: rgba(208,132,254,0.1);
@@ -54,6 +55,9 @@
 .about{
     width: 60%;
     text-align: center;
+}
+.about p{
+    font-size: 20px;
 }
 .block_activities{
     width: 100%;
