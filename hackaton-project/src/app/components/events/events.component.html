@@ -43,7 +43,7 @@
           {{ event.showDetails ? "Cacher les détails" : "Voir les détails" }}
         </button>
 
-        <div *ngIf="event.showDetails" class="details">
+        <div [class.show]="event.showDetails" class="details">
           <p>{{ event.details }}</p>
         </div>
       </div>
