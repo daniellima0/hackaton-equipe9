@@ -16,10 +16,12 @@
     background-image: url('/assets/femme_inge.jpg'); /* Remplacez par le chemin de votre image */
     background-size: cover; /* Adapter l'image à la taille du header */
     background-position: center; /* Centrer l'image */
-    color: white;
+    color: #520185;
     text-align: center;
+    justify-content: center;
     padding: 20px;
     border-radius: 12px 12px 0 0;
+    height:400px;
 }
 
 /* Sections */
