@@ -14,7 +14,7 @@
     text-align: center;
     font-weight: bold;
     margin-top: 100px;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: Roboto, sans-serif;
     color: #520185; 
     text-shadow: 2px 2px 5px rgba(82, 1, 133, 0.3);
 }
@@ -72,7 +72,7 @@
 .partenaire h3 {
     margin-top: 10px;
     font-size: 1.5rem;
-    font-family:Georgia, 'Times New Roman', Times, serif ;
+    font-family: Roboto, sans-serif;
     font-weight: bold;
     color: #520185; 
 }
