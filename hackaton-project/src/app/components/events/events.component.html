@@ -2,6 +2,14 @@
 <div class="container">
   <h2 class="title">Événements</h2>
 
+  <!-- Filters -->
+  <input
+    type="text"
+    [(ngModel)]="searchQuery"
+    placeholder="Rechercher un événement..."
+    class="search-bar"
+  />
+
   <div class="filters">
     <label for="category">Filtrer par catégorie:</label>
     <select id="category" [(ngModel)]="selectedCategory">
@@ -18,6 +26,7 @@
     </select>
   </div>
 
+  <!-- Events List -->
   <div
     *ngFor="let year of eventYears"
     class="year-section"
@@ -35,7 +44,6 @@
         <p class="description">{{ event.description }}</p>
         <p class="category"><strong>Catégorie:</strong> {{ event.category }}</p>
 
-        <!-- Collapsible details section -->
         <button
           class="toggle-details"
           (click)="event.showDetails = !event.showDetails"
@@ -47,6 +55,17 @@
           <p>{{ event.details }}</p>
         </div>
       </div>
+    </div>
+
+    <!-- Pagination -->
+    <div class="pagination" *ngIf="getTotalPages(year) > 1">
+      <button
+        *ngFor="let page of [].constructor(getTotalPages(year)); let i = index"
+        (click)="goToPage(i + 1)"
+        [class.active]="currentPage === i + 1"
+      >
+        {{ i + 1 }}
+      </button>
     </div>
   </div>
 </div>
