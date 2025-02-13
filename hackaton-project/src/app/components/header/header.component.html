@@ -1,8 +1,9 @@
-<header class="header">
-    <div class="logo">
+<!-- Header principal -->
+<header class="header"> 
+  <div class="logo">
       <img src="assets/Logo_IAF.png" alt="Logo" />
-    </div>
-    <div class="reseaux">
+  </div>
+  <div class="reseaux">
       <a href="https://www.instagram.com/iaf_7374/" class="reseau-link">
           <img src="assets/instagram.svg" alt="Instagram Logo" />
       </a>
@@ -10,14 +11,37 @@
           <img src="assets/linkedin.svg" alt="LinkedIn Logo" />
       </a>
   </div>
-  
-    <div class="nav">
-        <ul> 
-            <li><button class="profile-btn" (click)="goToPresentation()">Presentation</button></li>
-            <li><button class="profile-btn" (click)="goToPartners()">Partenaires</button></li>
-            <li><button class="profile-btn" (click)="goToEvents()">Evenements</button></li>
-        </ul>
+  <div class="nav">
+      <ul> 
+          <li><button class="profile-btn" (click)="goToPresentation()">Présentation</button></li>
+          <li><button class="profile-btn" (click)="goToPartners()">Partenaires</button></li>
+          <li><button class="profile-btn" (click)="goToEvents()">Événements</button></li>
+      </ul>
+  </div>
+</header>
 
-    </div>
-  </header>
-  
+<!-- Nouveau header mobile -->
+<header class="mobile-header">
+  <button class="menu-btn" (click)="toggleMenu()">☰</button>
+  <div class="logo-mobile">
+    <img src="assets/Logo_IAF.png" alt="Logo" />
+</div>
+  <div class="nav-mobile" [class.open]="menuOpen">
+    <ul>
+        <li><button (click)="goToPresentation()">Présentation</button></li>
+        <li><button (click)="goToPartners()">Partenaires</button></li>
+        <li><button (click)="goToEvents()">Événements</button></li>
+    </ul>
+    <div class="reseaux-mobile">
+      <a href="https://www.instagram.com/iaf_7374/" class="reseau-link">
+          <img src="assets/instagram.svg" alt="Instagram Logo" />
+      </a>
+      <a href="https://www.linkedin.com/company/ing%C3%A9nieur-e-au-f%C3%A9minin/posts/?feedView=all" class="reseau-link">
+          <img src="assets/linkedin.svg" alt="LinkedIn Logo" />
+      </a>
+  </div>
+  </div>
+</header>
+
+<!-- Menu latéral -->
+

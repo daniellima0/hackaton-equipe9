@@ -10,44 +10,42 @@
     padding: 15px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     z-index: 1000;
-    justify-content: center; /* Centrer tout le contenu dans le header */
+    justify-content: center; /* Centrer tout le contenu */
 }
 
 /* Logo */
 .logo {
-    position: absolute; /* Positionne le logo indépendamment */
-    left: 30px; /* Espacement à gauche */
-}
-/* Logo */
-/* Conteneur des réseaux sociaux */
-.reseaux {
-    position: absolute; /* Fixe la position indépendamment du reste */
-    right: 50px; /* Place le conteneur à droite */
-    display: flex;
-    align-items: center;
-    gap: 15px; /* Ajoute un espacement entre les icônes */
-}
-
-/* Style des liens */
-.reseau-link img {
-    height: 30px;
-    transition: transform 0.3s ease-in-out;
-}
-
-.reseau-link img:hover {
-    transform: scale(1.2); /* Effet zoom au survol */
+    position: absolute;
+    left: 30px;
 }
 
 .logo img {
     height: 50px;
 }
 
+/* Icônes réseaux sociaux */
+.reseaux {
+    position: absolute;
+    right: 50px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.reseau-link img {
+    height: 30px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.reseau-link img:hover {
+    transform: scale(1.2);
+}
+
 /* Navigation */
 .nav {
     display: flex;
-    justify-content: center; /* Centre le menu */
-    width: 100%; /* Permet au menu de prendre toute la largeur */
-    margin:0
+    justify-content: center;
+    width: 100%;
 }
 
 .nav ul {
@@ -65,17 +63,126 @@
 .nav ul li button {
     background-color: #520185;
     border: none;
-    outline: none;
-    text-decoration: none;
     color: white;
     font-size: 18px;
     font-weight: bold;
     padding: 5px 10px;
-    cursor: pointer; /* Ajoute un curseur pour indiquer que c'est cliquable */
+    cursor: pointer;
     transition: color 0.3s, border-bottom 0.3s;
 }
 
 .nav ul li button:hover {
     color: #ffae75;
     border-bottom: 3px solid #ffae75;
+}
+.mobile-header{
+    display:none;   
+}
+/* --- RESPONSIVE --- */
+@media (max-width: 700px) {
+    /* Cacher le header classique */
+    .header {
+        display: none;
+    }
+
+    /* Afficher le nouveau header mobile avec la barre violette */
+    .mobile-header {
+        display: block;
+        background: #520185;  /* Couleur violette */
+        
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;  /* Assurer que le header mobile soit au-dessus des autres éléments */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    /* Bouton de menu */
+    .menu-btn {
+        background: none;
+        border: none;
+        color: white;
+        font-size: 30px;
+        cursor: pointer;
+        padding: 5px 10px;
+        transition: color 0.3s;
+    }
+
+    .menu-btn:hover {
+        color: #ffae75;  /* Changer la couleur au survol */
+    }
+
+    /* Cacher le menu mobile au début */
+    .nav-mobile {
+        display: none;
+    }
+
+    /* Afficher le menu mobile lorsque la classe "open" est ajoutée */
+    .nav-mobile.open {
+        display: block;
+        background: #520185;  /* Garder la couleur violette pour le fond du menu */
+        
+        position: absolute;
+        top: 50px;  /* Positionner juste en dessous de la barre violette */
+        left: 0;
+        right: 0;
+        width: 100%;
+    }
+
+    /* Listes du menu mobile */
+    .nav-mobile ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+    }
+
+    .nav-mobile ul li {
+        padding: 10px;
+    }
+
+    .nav-mobile ul li button {
+        background-color: transparent;
+        border: none;
+        color: white;
+        font-size: 18px;
+        font-weight: bold;
+        padding: 10px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .nav-mobile ul li button:hover {
+        color: #ffae75;
+    }
+
+    /* Réseaux sociaux dans le menu mobile */
+    .reseaux-mobile {
+        display: flex;
+        justify-content: center;
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    .reseau-link img {
+        height: 30px;
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .reseau-link img:hover {
+        transform: scale(1.2);
+    }
+    .logo-mobile {
+        position: absolute;
+        top: 50%;           /* Positionner à 50% du haut */
+        left: 50%;          /* Positionner à 50% de la largeur */
+        transform: translate(-50%, -50%); /* Déplacer de moitié de la taille de l'élément */
+    }
+    
+    .logo-mobile img {
+        height: 50px;
+    }
 }

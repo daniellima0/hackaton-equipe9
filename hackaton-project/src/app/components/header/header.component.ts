@@ -8,19 +8,24 @@ import { Router } from '@angular/router';
   styleUrl: './header.component.css'
 })
 export class HeaderComponent {
+  menuOpen = false;
   constructor(private router: Router) {}
 
+  toggleMenu() {
+    this.menuOpen = !this.menuOpen;
+  }
   goToPresentation(){
     this.router.navigate(['']);
-    
+    this.menuOpen = !this.menuOpen;
   }
   goToPartners(){
     this.router.navigate(['/partners']);
+    this.menuOpen = !this.menuOpen;
     
   }
 
   goToEvents(){
     this.router.navigate(['/events']);
-    
+    this.menuOpen = !this.menuOpen;
   }
 }
