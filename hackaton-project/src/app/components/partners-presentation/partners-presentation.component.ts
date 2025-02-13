@@ -1,12 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForOf } from '@angular/common'; 
+import { NgForOf } from '@angular/common';
+import { ChatbotComponent } from "../chatbot/chatbot.component"; 
 
 @Component({
   selector: 'app-partenaires',
   templateUrl: './partners-presentation.component.html',
   styleUrls: ['./partners-presentation.component.css'],
   standalone: true,  
-  imports: [NgForOf]  
+  imports: [NgForOf, ChatbotComponent]  
 })
 export class PartnersPresentationComponent implements OnInit {
 
