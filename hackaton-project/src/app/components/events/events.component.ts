@@ -31,7 +31,7 @@ export class EventsComponent {
       details:
         'Découvrez nos campus à Annecy-le-Vieux et au Bourget-du-Lac lors de nos journées portes ouvertes...',
       showDetails: false, // Initial state for details visibility
-      imageUrl: 'assets/images/event1.jpg', // Example image URL
+      imageUrl: 'assets/Portes_ouvertes.png', // Example image URL
     },
     {
       date: '15/02/24',
@@ -41,7 +41,7 @@ export class EventsComponent {
       details:
         "Participez à une conférence inspirante suivie d'une table ronde sur le rôle crucial des femmes...",
       showDetails: false,
-      imageUrl: 'assets/images/event1.jpg', // Example image URL
+      imageUrl: 'assets/Table_ronde.png', // Example image URL
     },
     {
       date: '08/03/24',
@@ -51,7 +51,7 @@ export class EventsComponent {
       details:
         "Rejoignez-nous pour un afterwork convivial au Charly's Pub, dont les bénéfices seront reversés...",
       showDetails: false,
-      imageUrl: 'assets/images/event1.jpg', // Example image URL
+      imageUrl: 'assets/AfterWork.png', // Example image URL
     },
     {
       date: '25/03/24',
@@ -61,7 +61,7 @@ export class EventsComponent {
       details:
         'Nos membres se rendront dans plusieurs lycées pour des interventions inspirantes...',
       showDetails: false,
-      imageUrl: 'assets/images/event1.jpg', // Example image URL
+      imageUrl: 'assets/accueil_lycée.png', // Example image URL
     },
     {
       date: '16/05/24',
@@ -71,7 +71,7 @@ export class EventsComponent {
       details:
         "Célébrez l'engagement et l'innovation lors de la remise des prix Ingénieuses'24...",
       showDetails: false,
-      imageUrl: 'assets/images/event1.jpg', // Example image URL
+      imageUrl: 'assets/', // Example image URL
     },
     {
       date: '07/11/24',
@@ -81,7 +81,7 @@ export class EventsComponent {
       details:
         "En partenariat avec CATS, cette conférence explorera l'importance de la mixité des genres...",
       showDetails: false,
-      imageUrl: 'assets/images/event1.jpg', // Example image URL
+      imageUrl: 'assets/Conférence_CATS.png', // Example image URL
     },
     {
       date: '04/12/24',
@@ -91,7 +91,60 @@ export class EventsComponent {
       details:
         "Nous présenterons les métiers de l'ingénierie aux élèves du Lycée Saint-Michel...",
       showDetails: false,
-      imageUrl: 'assets/images/event1.jpg', // Example image URL
+      imageUrl: 'assets/presentation-lycee-saint-michel.png', // Example image URL
+    },
+    {
+      date: '19/12/24',
+      title: "AfterWork de Fin d'Année",
+      description: "Rencontre avec les membres d'IAF",
+      category: 'AfterWork',
+      details:
+        "Terminez l'année en beauté avec un afterwork spécial réservé aux membres d'Ingénieure Au Féminin. Un moment privilégié pour échanger, réseauter et célébrer nos réussites collectives.",
+      showDetails: false,
+      imageUrl: 'assets/afterwork-fin-annee.png', // Example image URL
+    },
+    {
+      date: '21/01/25',
+      title: "Visite de l'INES",
+      description: 'Découverte des Métiers de la Recherche',
+      category: 'Visite',
+      details:
+        "Les lycéens du Lycée Monge sont invités à visiter l'Institut National de l'Énergie Solaire (INES) pour découvrir les métiers de la recherche. Une journée riche en découvertes et en inspirations pour les futurs scientifiques.",
+      showDetails: false,
+      imageUrl: 'assets/visite-INES.png', // Example image URL
+    },
+    {
+      date: '13/02/25',
+      title: 'Hackathon Innovation et Créativité au Féminin',
+      description:
+        "Participez à notre hackathon annuel dédié à l'innovation et à la créativité.",
+      category: 'Hackathon',
+      details:
+        'Formez des équipes et relevez des défis technologiques passionnants, tout en développant vos compétences en ingénierie.',
+      showDetails: false,
+      imageUrl: 'assets/hackathon.png', // Example image URL
+    },
+    {
+      date: '18/02/25',
+      title: 'Ciné-Débat : "Une Femme d\'Exception"',
+      description:
+        "Projection suivie d'un débat sur les défis rencontrés par les femmes dans les domaines scientifiques et juridiques.",
+      category: 'Cinéma',
+      details:
+        'Assistez à la projection du film "Une Femme d\'Exception", suivie d\'un débat sur les défis rencontrés par les femmes dans les domaines scientifiques et juridiques. Une soirée enrichissante pour échanger et réfléchir ensemble.',
+      showDetails: false,
+      imageUrl: 'assets/cine-debat.png', // Example image URL
+    },
+    {
+      date: '25/02/25',
+      title: 'Exposition : "Veuillez Rendre à Cléopâtre"',
+      description:
+        "Exposition sur les femmes scientifiques victimes de l'effet Matilda.",
+      category: 'Exposition',
+      details:
+        "Découvrez notre exposition \"Veuillez Rendre à Cléopâtre\", qui met à l'honneur les femmes scientifiques victimes de l'effet Matilda. Une plongée dans l'histoire pour redécouvrir des figures féminines oubliées et leurs contributions majeures.",
+      showDetails: false,
+      imageUrl: 'assets/exposition-cleopatre.png', // Example image URL
     },
   ];
 
