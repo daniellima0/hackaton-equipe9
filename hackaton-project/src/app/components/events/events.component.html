@@ -1,1 +1,44 @@
-<p>events works!</p>
+<div class="container">
+  <h2 class="title">Événements</h2>
+
+  <div class="filters">
+    <label for="category">Filtrer par catégorie:</label>
+    <select id="category" [(ngModel)]="selectedCategory">
+      <option value="">Toutes</option>
+      <option *ngFor="let category of eventCategories" [value]="category">
+        {{ category }}
+      </option>
+    </select>
+
+    <label for="year">Filtrer par année:</label>
+    <select id="year" [(ngModel)]="selectedYear">
+      <option value="">Toutes</option>
+      <option *ngFor="let year of eventYears" [value]="year">{{ year }}</option>
+    </select>
+  </div>
+
+  <div *ngFor="let year of eventYears" class="year-section" [hidden]="!shouldShowYear(year)">
+    <h3 class="year-title">{{ year }}</h3>
+
+    <div *ngFor="let event of getFilteredEvents(year)" class="event-card">
+      <div class="event-image">
+        <img [src]="event.imageUrl" alt="{{ event.title }}" />
+      </div>
+      <div class="event-details">
+        <p class="date">{{ event.date }}</p>
+        <h4 class="event-title">{{ event.title }}</h4>
+        <p class="description">{{ event.description }}</p>
+        <p class="category"><strong>Catégorie:</strong> {{ event.category }}</p>
+
+        <!-- Collapsible details section -->
+        <button class="toggle-details" (click)="event.showDetails = !event.showDetails">
+          {{ event.showDetails ? 'Cacher les détails' : 'Voir les détails' }}
+        </button>
+
+        <div *ngIf="event.showDetails" class="details">
+          <p>{{ event.details }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
