@@ -200,3 +200,40 @@
 .pagination button.active {
   background-color: #520185;
 }
+
+@media (max-width: 768px) {
+  .search-bar {
+    width: 94%;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .filters select {
+    width: 100%;
+    margin-bottom: 15px;
+  }
+
+  .event-card {
+    flex-direction: column; /* Stack image and event details vertically */
+    align-items: center; /* Center the content */
+    padding: 20px;
+  }
+
+  .event-image {
+    width: 100%; /* Make the image span the full width */
+    height: 220px; /* Keep the height consistent */
+    margin-bottom: 30px; /* Space between the image and the details */
+  }
+
+  .event-image img {
+    width: 100%; /* Make the image take full width */
+    height: 250px; /* Maintain the aspect ratio */
+  }
+
+  .event-details {
+    text-align: center; /* Center the text for better alignment */
+  }
+}
