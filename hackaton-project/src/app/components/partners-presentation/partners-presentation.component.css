@@ -5,7 +5,7 @@
     padding: 20px;
     width: 100%;
     align-items: center;
-    background-color: #fee6f4; 
+    background-color: #fee6f4;
     min-height: 100vh;
 }
 
@@ -16,6 +16,8 @@
     margin-top: 100px;
     font-family: Roboto, sans-serif;
     color: #520185; 
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #520185;
     text-shadow: 2px 2px 5px rgba(82, 1, 133, 0.3);
 }
 
@@ -40,6 +42,8 @@
     max-width: 280px;
     text-align: center;
     margin-top: 20px;
+    height: auto; 
+    justify-content: space-between;
 }
 
 .partenaire:hover {
@@ -50,7 +54,7 @@
 .partner-logo {
     width: 100%;
     height: 170px;
-    background-size: contain; 
+    background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
     background-color: #fff;
@@ -59,22 +63,22 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    border: 4px solid #ccc; 
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2); 
+    border: 4px solid #ccc;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.2);
 }
 
 .partner-logo img {
     width: 100%;
     height: 100%;
-    object-fit: contain;  
+    object-fit: contain;
 }
 
 .partenaire h3 {
     margin-top: 10px;
     font-size: 1.5rem;
-    font-family: Roboto, sans-serif;
+    font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
-    color: #520185; 
+    color: #520185;
 }
 
 .partenaire p {
@@ -82,56 +86,77 @@
     font-size: 0.9rem;
     color: #555;
     padding: 0 10px;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
+.partenaire .website-link {
+    margin-top: 15px; /* Distância entre a descrição e o botão */
+    padding: 10px 20px;
+    background-color: #ffae75;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: inline-flex; /* Isso permite que o botão seja centralizado */
+    justify-content: center;
+    align-items: center;
+}
+
+.partenaire .website-link:hover {
+    background-color: #3f165f;
+}
 
 /* < 768px */
 @media (max-width: 768px) {
     .partenaires-title {
-        font-size: 2.5em;  
+        font-size: 2.5em;
     }
 
     .partenaire {
-        max-width: 250px;  
-        padding: 12px;  
+        max-width: 250px;
+        padding: 12px;
     }
 
     .partner-logo {
-        width: 230px;  
-        height: 150px;  
+        width: 230px;
+        height: 150px;
     }
 
     h3 {
-        font-size: 1.2rem;  
+        font-size: 1.2rem;
     }
 
     p {
-        font-size: 0.9rem;  
+        font-size: 0.9rem;
     }
 }
 
 /* phones */
 @media (max-width: 480px) {
     .partenaires-list {
-        flex-direction: column;  
-        gap: 15px;  
+        flex-direction: column;
+        gap: 15px;
     }
 
     .partenaire {
-        max-width: 100%;  
-        margin-top: 10px;  
+        max-width: 100%;
+        margin-top: 10px;
     }
 
     .partner-logo {
-        width: 100%;  
-        height: 130px;  
+        width: 100%;
+        height: 130px;
     }
 
     h3 {
-        font-size: 1rem;  
+        font-size: 1rem;
     }
 
     p {
-        font-size: 0.85rem;  
+        font-size: 0.85rem;
     }
 }

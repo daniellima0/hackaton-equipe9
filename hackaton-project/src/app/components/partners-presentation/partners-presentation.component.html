@@ -1,13 +1,13 @@
 <div class="container-partenaires">
-  <h1 class="partenaires-title">Nos Partenaires</h1>
-  <div class="partenaires-list">
-    <div class="partenaire" *ngFor="let partenaire of partenaires">
-      <div class="partner-logo">
-        <img [src]="partenaire.logo" alt="{{ partenaire.nom }}" />
-      </div>
-      <h3>{{ partenaire.nom }}</h3>
-      <p>{{ partenaire.description }}</p>
+    <h1 class="partenaires-title">Nos Partenaires</h1>
+    <div class="partenaires-list">
+        <div class="partenaire" *ngFor="let partenaire of partenaires">
+            <div class="partner-logo">
+                <img [src]="partenaire.logo" alt="{{ partenaire.nom }}">
+            </div>
+            <h3>{{ partenaire.nom }}</h3>
+            <p>{{ partenaire.description }}</p>
+            <a class="website-link" [href]="partenaire.website" target="_blank">Visiter le site</a>
+        </div>
     </div>
-  </div>
 </div>
-<app-chatbot />
