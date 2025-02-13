@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { HeaderComponent } from '../header/header.component'; // ✅ Ajout du FormsModule
+import { HeaderComponent } from '../header/header.component';
+import { ChatbotComponent } from "../chatbot/chatbot.component"; // ✅ Ajout du FormsModule
 
 interface Event {
   date: string;
@@ -15,7 +16,7 @@ interface Event {
 
 @Component({
   selector: 'app-events',
-  imports: [CommonModule, FormsModule, HeaderComponent],
+  imports: [CommonModule, FormsModule, HeaderComponent, ChatbotComponent],
   templateUrl: './events.component.html',
   styleUrl: './events.component.css',
 })
