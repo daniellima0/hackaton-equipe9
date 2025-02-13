@@ -1,0 +1,62 @@
+/* Header Fixe */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: #520185;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    justify-content: center; /* Centrer tout le contenu dans le header */
+}
+
+/* Logo */
+.logo {
+    position: absolute; /* Positionne le logo indépendamment */
+    left: 30px; /* Espacement à gauche */
+}
+
+.logo img {
+    height: 50px;
+}
+
+/* Navigation */
+.nav {
+    display: flex;
+    justify-content: center; /* Centre le menu */
+    width: 100%; /* Permet au menu de prendre toute la largeur */
+    margin:0
+}
+
+.nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav ul li {
+    display: inline;
+}
+
+.nav ul li button {
+    background-color: #520185;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 5px 10px;
+    cursor: pointer; /* Ajoute un curseur pour indiquer que c'est cliquable */
+    transition: color 0.3s, border-bottom 0.3s;
+}
+
+.nav ul li button:hover {
+    color: #ffae75;
+    border-bottom: 3px solid #ffae75;
+}
